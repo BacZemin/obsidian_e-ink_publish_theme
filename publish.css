@@ -1,0 +1,223 @@
+/*
+  
+  E-Ink Publish / MIT License
+Copyright (c) 2024 Your Name
+
+*/
+  /* Adjust the following variables or find more at the link below */
+  /* https://docs.obsidian.md/Reference/CSS+variables/CSS+variables */
+  
+  body {
+    /* Font sizes */
+      --font-text-size: 16px;
+    --font-small:     13px;
+    --font-smaller:   11px;
+    --font-smallest:  10px;
+    --font-inputs:    13px;
+    
+    /* Font weights */
+      --normal-weight:  400;
+    --bold-weight:    600;
+    --link-weight:    inherit;
+    
+    /* Headings */
+      --page-title-weight: 500;
+    --page-title-line-height: 1.1;
+    
+    --h1:             1.25em;
+    --h2:             1.1em;
+    --h3:             1.05em;
+    --h4:             1em;
+    --h5:             0.85em;
+    --h6:             0.85em;
+    
+    --h1-weight:      600;
+    --h2-weight:      600;
+    --h3-weight:      600;
+    --h4-weight:      500;
+    --h5-weight:      500;
+    --h6-weight:      400;
+    
+    --h1-variant:     normal;
+    --h2-variant:     normal;
+    --h3-variant:     normal;
+    --h4-variant:     normal;
+    --h5-variant:     small-caps;
+    --h6-variant:     small-caps;
+    
+    --h1-style:       normal;
+    --h2-style:       normal;
+    --h3-style:       normal;
+    --h4-style:       normal;
+    --h5-style:       normal;
+    --h6-style:       normal;
+    
+    /* Cards */
+      --cards-min-width:    180px;
+    --cards-max-width:    1fr;
+    --cards-mobile-width: 180px;
+    --cards-image-height: 400px;
+    --cards-padding:      1.2em;
+    --cards-image-fit:    contain;
+    --cards-background:   transparent;
+    --cards-border-width: 1px;
+    --cards-aspect-ratio: auto;
+    --cards-columns:      repeat(auto-fit, minmax(var(--cards-min-width), var(--cards-max-width)));
+    
+    /* Images */
+      --image-radius:   8px;
+    
+    --img-grid-fit:        cover;
+    --img-grid-background: transparent;
+    --img-grid-gap:        0.5rem;
+    
+    --img-zoom-background: rgba(0,0,0,0.6);
+    --img-zoom-max-width:  96%;
+    --img-zoom-max-height: 90vh;
+    --img-zoom-in-cursor:  zoom-in;
+    --img-zoom-out-cursor: zoom-out;
+    
+    /* Misc */
+      --icon-muted:     0.5;
+    --border-width:   1px;
+    
+    --folding-offset: 16px;
+    --nested-padding: 30px;    /* Quotes and transclusions */
+      
+      --list-padding:   2em;     /* List padding */
+      --list-spacing:   0.075em; /* Space between list items */
+  }
+
+/* Mobile */
+  @media (max-width:400pt) {
+    body {
+      --cards-min-width:var(--cards-mobile-width);
+      --img-grid-gap: 0.25rem;
+    }
+  }
+/* E-Ink color scheme */
+  .theme-dark,
+.theme-light {
+  --color-black-rgb: 0,0,0;
+  --color-gray-rgb: 55,55,55;
+  --color-white-rgb: 255,255,255;
+  --color-highlight-rgb: 200,200,200;
+  
+  --color-black:#000000;
+    --color-gray:#373737;
+    --color-white:#ffffff;
+    --color-highlight:#c8c8c8;
+}
+
+.theme-light {
+  --bg1:#ffffff;
+    --bg2:#f5f5f5;
+    --bg3:#e0e0e0;
+    
+    --ui1:#1a1a1a;
+    --ui2:#333333;
+    --ui3:#666666;
+    
+    --tx1:#000000;
+    --tx2:#333333;
+    --tx3:#666666;
+    
+    --ax1:#000000;
+    --ax2:#1a1a1a;
+    --ax3:#333333;
+    
+    --hl1:#c8c8c8;
+}
+
+.theme-dark {
+  --bg1:#000000;
+    --bg2:#1c1c1c;
+    --bg3:#333333;
+    
+    --ui1:#ffffff;
+    --ui2:#dddddd;
+    --ui3:#aaaaaa;
+    
+    --tx1:#ffffff;
+    --tx2:#dddddd;
+    --tx3:#aaaaaa;
+    
+    --ax1:#ffffff;
+    --ax2:#dddddd;
+    --ax3:#aaaaaa;
+    
+    --hl1:#c8c8c8;
+}
+
+/* Miscellaneous styles for both themes */
+  .theme-light,
+.theme-dark {
+  --h1-color: var(--text-normal);
+  --h2-color: var(--text-normal);
+  --h3-color: var(--text-normal);
+  --h4-color: var(--text-normal);
+  --h5-color: var(--text-normal);
+  --h6-color: var(--text-muted);
+}
+
+/* Publish Container styles */
+  .published-container {
+    --outline-heading-color-active: var(--tx1);
+    --sidebar-left-background: var(--bg2);
+  }
+
+.theme-dark,
+.theme-light {
+  --background-primary: var(--bg1);
+  --background-primary-alt: var(--bg2);
+  --background-secondary: var(--bg2);
+  --background-secondary-alt: var(--bg1);
+  --background-tertiary: var(--bg3);
+  --background-table-rows: var(--bg2);
+  --background-modifier-form-field: var(--bg1);
+  --background-modifier-form-field-highlighted: var(--bg1);
+  --background-modifier-accent: var(--ax3);
+  --background-modifier-border: var(--ui1);
+  --background-modifier-border-hover: var(--ui2);
+  --background-modifier-border-focus: var(--ui3);
+  --background-modifier-success: var(--color-highlight);
+  --background-divider: var(--ui1);
+  --interactive-hover: var(--ui1);
+  --interactive-accent: var(--ax3);
+  --interactive-accent-hover: var(--ax3);
+  --quote-opening-modifier: var(--ui2);
+  --modal-border: var(--ui2);
+  --icon-color: var(--tx2);
+  --icon-color-hover: var(--tx2);
+  --icon-color-active: var(--tx1);
+  --icon-hex: var(--color-white);
+  --text-normal: var(--tx1);
+  --text-bold: var(--tx1);
+  --text-italic: var(--tx1);
+  --text-muted: var(--tx2);
+  --text-faint: var(--tx3);
+  --text-accent: var(--ax1);
+  --text-accent-hover: var(--ax2);
+  --text-on-accent: white;
+  --text-selection: var(--hl1);
+  --text-code: var(--tx3);
+  --text-error: var(--color-black);
+  --text-blockquote: var(--tx2);
+  --title-color: var(--tx1);
+  --title-color-inactive: var(--tx2);
+}
+
+/* Specific adjustments for text selection, error highlighting, and others */
+  .theme-light {
+    --text-selection-bg: var(--color-highlight);
+    --background-modifier-error: rgba(255, 0, 0, 0.14);
+    --background-modifier-error-hover: rgba(255, 0, 0, 0.08);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+  }
+
+.theme-dark {
+  --text-selection-bg: rgba(255, 255, 255, 0.1);
+  --background-modifier-error: rgba(255, 20, 20, 0.12);
+  --background-modifier-error-hover: rgba(255, 20, 20, 0.18);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
